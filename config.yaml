@@ -1,0 +1,47 @@
+# config.yaml
+num_rows: 100
+
+schema:
+  - name: id
+    type: integer
+    generation:
+      start: 1
+      step: 1
+
+  - name: name
+    type: string
+    generation:
+      faker: name
+
+  - name: address
+    type: string
+    generation:
+      faker: address
+
+  - name: email
+    type: string
+    generation:
+      faker: email
+
+  - name: age
+    type: integer
+    generation:
+      min: 18
+      max: 90
+
+  - name: signup_date
+    type: date
+    generation:
+      start_date: 2024-01-01
+      end_date: 2024-12-31
+
+  - name: membership_level
+    type: categorical
+    generation:
+      categories: [Gold, Silver, Bronze]
+      probabilities: [0.2, 0.2, 0.6]
+      
+  - name: is_active
+    type: boolean
+    generation:
+      probability: 0.7
